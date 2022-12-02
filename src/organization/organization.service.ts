@@ -6,7 +6,7 @@ import { Repository } from 'typeorm';
 @Injectable()
 export class OrganizationService {
     constructor(
-        @InjectRepository(OrganizationService) private readonly organizationRepository: Repository<Organization>,
+        @InjectRepository(Organization) private readonly organizationRepository: Repository<Organization>,
       ) {}
           
       getOrganizations() {
