@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Param, ParseIntPipe, Post, UsePipes, ValidationPipe } from '@nestjs/common';
 import { OrganizationService } from './organization.service';
 
-@Controller('organization')
+@Controller('organizations')
 export class OrganizationController {
     constructor(private readonly organizationService: OrganizationService) {}
   
