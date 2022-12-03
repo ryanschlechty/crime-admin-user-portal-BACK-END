@@ -3,7 +3,8 @@ INSERT INTO users (
     updated_on,
     organization_api_id,
     email,
-    is_admin
+    is_admin,
+	username
 )
 VALUES 
 (
@@ -11,6 +12,7 @@ VALUES
     CURRENT_TIMESTAMP,
     (SELECT api_id from organizations WHERE organizations.name = 'Ball State'),
     'someballstateadmin@bsu.edu',
-    '1'
+    '1',
+	'ballstateadmin'
 )
 ON CONFLICT (email) DO NOTHING;
