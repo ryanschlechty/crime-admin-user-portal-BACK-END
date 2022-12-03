@@ -9,16 +9,3 @@ CREATE TABLE IF NOT EXISTS organizations
     CONSTRAINT organizations_api_id_key UNIQUE (api_id),
     CONSTRAINT organizations_name_key UNIQUE (name)
 )
-
-INSERT INTO organizations (
-    name,
-    created_on,
-    updated_on
-)
-VALUES
-(
-    'Ball State',
-    CURRENT_TIMESTAMP,
-    CURRENT_TIMESTAMP
-)
-ON CONFLICT (name) DO NOTHING;
