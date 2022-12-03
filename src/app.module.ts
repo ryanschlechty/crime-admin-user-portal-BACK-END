@@ -20,7 +20,7 @@ import { OrganizationModule } from './organization/organization.module';
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
         entities: [User, Organization],
-        synchronize: true,
+        synchronize: false,
       }),
       inject: [ConfigService],
     }),

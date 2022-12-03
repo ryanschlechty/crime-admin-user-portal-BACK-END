@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, Generated, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('users')
 export class User {
@@ -10,15 +10,41 @@ export class User {
 
   @Column({
     nullable: false,
-    default: '',
   })
-  username: string;
+  @Generated("uuid")
+  api_id: string;
 
   @Column({
-    name: 'email_address',
     nullable: false,
-    default: '',
+  })
+  created_on: Date;
+
+  @Column({
+    nullable: false,
+  })
+  updated_on: Date;
+
+  @Column({
+    nullable: false,
+  })
+  @Generated("uuid")
+  organization_api_id: string;
+
+  @Column({
+    nullable: false,
+    default: ''
   })
   email: string;
+
+  @Column({
+    nullable: false,
+  })
+  is_admin: boolean;
+
+  @Column({
+    nullable: false,
+    default: ''
+  })
+  username: string;
 
 }
