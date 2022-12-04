@@ -20,14 +20,14 @@ export class UserController {
     return this.userService.getUsers();
   }
 
+  @Post('create')
+  @UsePipes(ValidationPipe)
+  createUsers(@Body() userDto: UserDto) {
+    return this.userService.createUser(userDto);
+  }
+
   // @Get('id/:id')
   // findUsersById(@Param('id', ParseIntPipe) id: number) {
   //   return this.userService.findUsersById(id);
-  // }
-
-  // @Post('create')
-  // @UsePipes(ValidationPipe)
-  // createUsers(@Body() createUserDto: CreateUserDto) {
-  //   return this.userService.createUser(createUserDto);
   // }
 }
