@@ -18,6 +18,10 @@ export class UserService {
         const newUser = this.userRepository.create(userDto);
         return this.userRepository.save(newUser);
       }
+
+      deleteUser(id: number) {
+        return this.userRepository.delete(id);
+      }
     
     //   findUsersById(id: number) {
     //     return this.userRepository.findOne(id);
