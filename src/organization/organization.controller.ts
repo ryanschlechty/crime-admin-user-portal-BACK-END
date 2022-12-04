@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Param, ParseIntPipe, Post, UsePipes, ValidationPipe } from '@nestjs/common';
-import { OrganizationDto } from 'src/dtos/organization.dtos';
+import { OrganizationDto } from '../dtos/organization.dtos';
 import { OrganizationService } from './organization.service';
 
 @Controller('organizations')
