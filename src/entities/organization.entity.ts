@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, Generated, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('organizations')
 export class Organization {
@@ -10,8 +10,24 @@ export class Organization {
 
   @Column({
     nullable: false,
-    default: '',
+  })
+  @Generated("uuid")
+  api_id: string;
+
+  @Column({
+    nullable: false,
+    default: ''
   })
   name: string;
+
+  @Column({
+    nullable: false,
+  })
+  created_on: Date;
+
+  @Column({
+    nullable: false,
+  })
+  updated_on: Date;
 
 }
