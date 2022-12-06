@@ -53,14 +53,16 @@ describe('UserService', () => {
         service.createUser({
           username: 'user1',
           email: 'useremail@bsu.edu',
-          is_admin: true
+          is_admin: true,
+          organization_api_id: '12345'
         }),
       ).toEqual(testUser);
       expect(repo.create).toBeCalledTimes(1);
       expect(repo.create).toBeCalledWith({
         username: 'user1',
         email: 'useremail@bsu.edu',
-        is_admin: true
+        is_admin: true,
+        organization_api_id: '12345'
       });
       expect(repo.save).toBeCalledTimes(1);
     });

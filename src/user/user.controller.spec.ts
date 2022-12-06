@@ -66,6 +66,7 @@ describe('UserController', () => {
         username: 'testUser1',
         email: 'testEmail1',
         is_admin: true,
+        organization_api_id: '12345'
       };
       await expect(controller.createUser(newUserDTO)).resolves.toEqual({
         id: 'a uuid',
