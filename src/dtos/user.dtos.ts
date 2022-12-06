@@ -11,4 +11,7 @@ export class UserDto {
   @IsNotEmpty()
   @IsBoolean()
   is_admin: boolean;
+
+  @IsNotEmpty()
+  organization_api_id: string;
 }
