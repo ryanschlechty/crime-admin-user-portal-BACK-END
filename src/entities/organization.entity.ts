@@ -30,4 +30,8 @@ export class Organization {
   })
   updated_on: Date;
 
+  constructor(name?: string) {
+    this.name = name || '';
+  }
+
 }

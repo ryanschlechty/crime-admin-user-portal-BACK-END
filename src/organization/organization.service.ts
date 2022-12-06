@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { OrganizationDto } from 'src/dtos/organization.dtos';
-import { Organization } from 'src/entities';
+import { OrganizationDto } from '../dtos/organization.dtos';
+import { Organization } from '../entities';
 import { Repository } from 'typeorm';
 
 @Injectable()
@@ -15,8 +15,9 @@ export class OrganizationService {
       }
 
       createOrganization(organizationDto: OrganizationDto) {
-        const newUser = this.organizationRepository.create(organizationDto);
-        return this.organizationRepository.save(newUser);
+        const newOrganization = this.organizationRepository.create(organizationDto);
+        this.organizationRepository.save(newOrganization);
+        return newOrganization;
       }
           
     //   findOrganizationById(id: number) {
