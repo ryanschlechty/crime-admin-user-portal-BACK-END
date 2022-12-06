@@ -47,4 +47,10 @@ export class User {
   })
   username: string;
 
+  constructor(username?: string, email?: string, is_admin?: boolean) {
+    this.username = username || '';
+    this.email = email || '';
+    this.is_admin = is_admin || false;
+  }
+
 }
