@@ -13,7 +13,7 @@ NodeJS is needed to download and manage packages.
 * Type the following command to install everything: `npm install`
 * Create a `.env` file at the root of the directory.
 * The `.env` file should follow this pattern:
-  - DB_HOST='localhost'
+  - DB_HOST='name of host from database'
   - DB_PORT= port # of database
   - DB_USERNAME='Your database username'
   - DB_PASSWORD='Your database password'
