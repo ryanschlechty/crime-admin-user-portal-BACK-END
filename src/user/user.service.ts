@@ -22,8 +22,4 @@ export class UserService {
       deleteUser(id: number) {
         return this.userRepository.delete(id);
       }
-    
-    //   findUsersById(id: number) {
-    //     return this.userRepository.findOne(id);
-    //   }
 }

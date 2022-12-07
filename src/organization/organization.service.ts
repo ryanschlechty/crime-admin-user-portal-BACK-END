@@ -18,8 +18,4 @@ export class OrganizationService {
         const newOrganization = this.organizationRepository.create(organizationDto);
         return this.organizationRepository.save(newOrganization);
       }
-          
-    //   findOrganizationById(id: number) {
-    //     return this.organizationRepository.findOne(id);
-    //   }
 }
