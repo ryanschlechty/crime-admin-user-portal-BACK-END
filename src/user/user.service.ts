@@ -16,8 +16,7 @@ export class UserService {
     
       createUser(userDto: UserDto) {
         const newUser = this.userRepository.create(userDto);
-        this.userRepository.save(newUser);
-        return newUser;
+        return this.userRepository.save(newUser);
       }
 
       deleteUser(id: number) {
