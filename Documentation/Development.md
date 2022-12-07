@@ -18,6 +18,12 @@ NodeJS is needed to download and manage packages.
   - DB_USERNAME='Your database username'
   - DB_PASSWORD='Your database password'
   - DB_NAME= 'Your name of your database'
+* This is an example of a `.env` file:
+  - DB_HOST='localhost'
+  - DB_PORT=5432
+  - DB_USERNAME='postgres'
+  - DB_PASSWORD='password123'
+  - DB_NAME= 'NotARealDB'
 
 * Run the command `npm run start` to start up back end API server
 
