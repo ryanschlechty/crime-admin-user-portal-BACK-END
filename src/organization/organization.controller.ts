@@ -16,9 +16,4 @@ export class OrganizationController {
   createOrganization(@Body() organizationDto: OrganizationDto) {
     return this.organizationService.createOrganization(organizationDto);
   }
-  
-//   @Get('id/:id')
-//   findOrganizationById(@Param('id', ParseIntPipe) id: number) {
-//     return this.organizationService.findOrganizationById(id);
-//   }
 }

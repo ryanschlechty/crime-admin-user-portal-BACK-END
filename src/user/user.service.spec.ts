@@ -48,24 +48,30 @@ describe('UserService', () => {
   });
 
   //TODO: fix receiving undefined value from create method
-  // describe('insert user', () => {
-  //   it('should successfully insert a user', () => {
-  //     expect(
-  //       service.createUser({
-  //         username: 'user1',
-  //         email: 'useremail@bsu.edu',
-  //         is_admin: true,
-  //         organization_api_id: '12345'
-  //       }),
-  //     ).toEqual(testUser);
-  //     expect(repo.create).toBeCalledTimes(1);
-  //     expect(repo.create).toBeCalledWith({
-  //       username: 'user1',
-  //       email: 'useremail@bsu.edu',
-  //       is_admin: true,
-  //       organization_api_id: '12345'
-  //     });
-  //     expect(repo.save).toBeCalledTimes(1);
-  //   });
-  // });
+  describe('insert user', () => {
+    it('should successfully insert a user', () => {
+      service.createUser({
+        username: 'user1',
+        email: 'useremail@bsu.edu',
+        is_admin: true,
+        organization_api_id: '12345'
+      }),
+      // expect(
+      //   service.createUser({
+      //     username: 'user1',
+      //     email: 'useremail@bsu.edu',
+      //     is_admin: true,
+      //     organization_api_id: '12345'
+      //   }),
+      // ).toEqual(testUser);
+      expect(repo.create).toBeCalledTimes(1);
+      expect(repo.create).toBeCalledWith({
+        username: 'user1',
+        email: 'useremail@bsu.edu',
+        is_admin: true,
+        organization_api_id: '12345'
+      });
+      expect(repo.save).toBeCalledTimes(1);
+    });
+  });
 });

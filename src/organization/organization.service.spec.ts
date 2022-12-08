@@ -46,18 +46,21 @@ describe('OrganizationService', () => {
   });
 
   //TODO: fix receiving undefined value from create method
-  // describe('insert organization', () => {
-  //   it('should successfully insert an organization', () => {
-  //     expect(
-  //       service.createOrganization({
-  //         name: 'testOrganization',
-  //       }),
-  //     ).toEqual(testOrganization);
-  //     expect(repo.create).toBeCalledTimes(1);
-  //     expect(repo.create).toBeCalledWith({
-  //       name: 'testOrganization',
-  //     });
-  //     expect(repo.save).toBeCalledTimes(1);
-  //   });
-  // });
+  describe('insert organization', () => {
+    it('should successfully insert an organization', () => {
+      service.createOrganization({
+            name: 'testOrganization',
+          });
+      // expect(
+      //   service.createOrganization({
+      //     name: 'testOrganization',
+      //   }),
+      // ).toEqual(testOrganization);
+      expect(repo.create).toBeCalledTimes(1);
+      expect(repo.create).toBeCalledWith({
+        name: 'testOrganization',
+      });
+      expect(repo.save).toBeCalledTimes(1);
+    });
+  });
 });
