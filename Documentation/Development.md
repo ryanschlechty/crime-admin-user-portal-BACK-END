@@ -7,10 +7,16 @@ Visual Studio Code is used for the IDE.
 NodeJS is needed to download and manage packages.
 * https://nodejs.org/en/download/
 
+Postgresql is needed to for the database. 
+* https://www.postgresql.org/download/
+
+PGAdmin is an application used to view the Postgresql database, which is helpful to have.
+* https://www.pgadmin.org/download/
+
 ## Recreating the project
 * Clone this repository using Visual Studio Code
 * Open a terminal inside the cloned project
-* Type the following command to install everything: `npm install`
+* Type the following command to install all packages needed: `npm install`
 * Create a `.env` file at the root of the directory.
 * The `.env` file should follow this pattern:
   - DB_HOST='name of host from database'
@@ -28,6 +34,17 @@ NodeJS is needed to download and manage packages.
 * Run the command `npm run start` to start up back end API server
 
 
-## Flyway Installation
+## Flyway
+Flyway is the tool used to perform data migrations for the application. Download Flyway in order to create the tables needed for this application. Postgresql is required for data migrations to work for this application.
+### Installation
+To download the Flyway command-line tool click the following link.
+* https://flywaydb.org/download
+### Implementation
+After downloading Flyway command-line tool perform a data migration by following these steps:
+* Open the Command Prompt.
+* Type the command: `flyway migrate -locations="filesystem:<file path to cloned backend project /database/migrations folder>" -url=jdbc:postgresql://<hostname>:<port>/<database name> -user=<your username> -password=<your password>`
+* Example Flyway migrate command: `flyway migrate -locations="filesystem:C:\Users\judek\VSCode\crime-admin-user-portal-BACK-END\src\database\migrations" -url=jdbc:postgresql://localhost:5432/LicenseDB -user=postgres -password=somepassword`
+* Open postgresql database to see new tables 'Organizations' and 'Users' have been added along with the 'flyway_schema_history' table.
+
 
 ## Replicating via Docker
