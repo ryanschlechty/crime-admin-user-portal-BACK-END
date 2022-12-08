@@ -48,3 +48,7 @@ After downloading Flyway command-line tool perform a data migration by following
 
 
 ## Replicating via Docker
+* Install docker desktop for your OS
+* Clone this repository 
+* Build docker image via `docker build -t crime-admin-user-portal-project-back-end .`
+* Run image via `docker run -d -p 3000:3000 crime-admin-user-portal-project-back-end`
